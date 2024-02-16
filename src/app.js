@@ -10,7 +10,14 @@ app.use(express.json());
 
 // routes
 app.use('/api/tasks', require('./routes/taskRoutes'));
-// app.use('/api/users', require('./routes/userRoutes'));
+app.use('/api/users', require('./routes/userRoutes'));
+
+//  handle not availble routes
+app.use((req, res, next) => {
+    res.status(404).json({ message: 'Route not found' });
+});
+
+// if no data found return error
 
 // error handler
 app.use((err, req, res, next) => {
