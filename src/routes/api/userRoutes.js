@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const userController = require('../controllers/userController');
-const {admin, auth} = require('../middleware/auth');
+const userController = require('../../controllers/userController');
+const {admin, auth} = require('../../middleware/auth');
 
 router.get('/', auth, admin,userController.getAllUsers);
 

@@ -9,8 +9,8 @@ require('./config/db');
 app.use(express.json());
 
 // routes
-app.use('/api/tasks', require('./routes/taskRoutes'));
-app.use('/api/users', require('./routes/userRoutes'));
+app.use('/api/tasks', require('./routes/api/taskRoutes'));
+app.use('/api/users', require('./routes/api/userRoutes'));
 
 //  handle not availble routes
 app.use((req, res, next) => {
